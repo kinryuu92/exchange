@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<style>
+    body {
+        line-height: 2;
+        font-size: 16px;
+        font-family: Arial;
+        margin: 0;
+
+    }
+    h1 {
+        background-color: yellow;
+        color: black;
+    }
+    . bis {
+        padding: 0 70px;
+    }
+</style>
+<body>
+<h1>Công Cụ chuyển đổi tiền tệ</h1>
+<div class="all">
+<span>Số lượng: </span>
+<input type="number" id="so">
+<br>
+<span>Từ: </span>
+<select id="tien" >
+    <div class="bis">
+    <option value="23000">Viet Nam</option>
+    <option value="1" selected>USD</option>
+    <option value="108.4">Yên</option>
+    <option value="0.925">Euro</option>
+    <option value="103">Yên nhật</option>
+    <option value="0.73">Bảng Anh</option>
+    </div>
+</select>
+<br>
+<span>sang: </span>
+<select id="giay" class="flex">
+    <option value="23000">Viet Nam</option>
+    <option value="1">USD</option>
+    <option value="108.4">Yên</option>
+    <option value="0.925">Euro</option>
+    <option value="104">Yên nhật</option>
+    <option value="0.73">Bảng Anh</option>
+</select>
+<br>
+<button id="te" onclick="tien()">Chuyển đổi</button>
+<script>
+    function tien(){
+        let loaitien1= document.getElementById('tien').value;
+        let loaitien2= document.getElementById('giay').value;
+        let money= document.getElementById('so').value;
+        let area= loaitien2*money/loaitien1;
+        document.getElementById('te').value= area;
+        alert('area: ' +area);
+    }
+</script>
+</div>
+</body>
+</html>
